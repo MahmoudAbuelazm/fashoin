@@ -1,10 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:store_app/consts/global_colors.dart';
 import 'package:store_app/screens/categories_screen.dart';
 import 'package:store_app/screens/users_screen.dart';
 
+import '../core/theme/colors.dart';
 import '../widget/appbar_icons.dart';
 import '../widget/feeds_widget.dart';
 import '../widget/sale_widget.dart';
@@ -81,9 +81,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     onPressed: () {
                       _searchController.clear();
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       IconlyLight.search,
-                      color: flirt,
+                      color:ColorsManagers. flirt,
                     ),
                   ),
                   hintText: "Search",

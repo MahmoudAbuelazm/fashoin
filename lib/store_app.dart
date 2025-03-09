@@ -1,9 +1,9 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
-import 'consts/global_colors.dart';
 import 'core/routing/app_router.dart';
 import 'core/routing/routes.dart';
+import 'core/theme/colors.dart';
 
 class StoreApp extends StatelessWidget {
   final AppRouter appRouter;
@@ -16,20 +16,20 @@ class StoreApp extends StatelessWidget {
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: cultured,
-        primaryColor: white,
-        appBarTheme: AppBarTheme(
+        scaffoldBackgroundColor:ColorsManagers. cultured,
+        primaryColor:ColorsManagers. white,
+        appBarTheme: const AppBarTheme(
           iconTheme: IconThemeData(
-            color: flirt,
+            color: ColorsManagers.flirt,
           ),
-          backgroundColor: cultured,
+          backgroundColor:ColorsManagers. cultured,
           centerTitle: true,
           titleTextStyle: TextStyle(
-              color: charcoal, fontSize: 22, fontWeight: FontWeight.bold),
+              color:ColorsManagers. charcoal, fontSize: 22, fontWeight: FontWeight.bold),
           elevation: 0,
         ),
-        iconTheme: IconThemeData(
-          color: flirt,
+        iconTheme: const IconThemeData(
+          color:ColorsManagers. flirt,
         ),
 
         textSelectionTheme: const TextSelectionThemeData(
@@ -44,15 +44,15 @@ class StoreApp extends StatelessWidget {
         //       bodyColor: Colors.black,
         //       displayColor: Colors.black,
         //     ),
-        cardColor: white,
+        cardColor:ColorsManagers. white,
         brightness: Brightness.light,
         colorScheme: ThemeData()
             .colorScheme
             .copyWith(
-              secondary: flirt,
+              secondary:ColorsManagers. flirt,
               brightness: Brightness.light,
             )
-            .copyWith(surface: azureishWhite),
+            .copyWith(surface: ColorsManagers.azureishWhite),
       ),
      initialRoute: Routes.homeScreen,
       onGenerateRoute: appRouter.generateRoute,

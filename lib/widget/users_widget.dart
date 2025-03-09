@@ -2,7 +2,7 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
-import '../consts/global_colors.dart';
+import '../core/theme/colors.dart';
 
 class UsersWidget extends StatelessWidget {
   const UsersWidget({super.key});
@@ -24,10 +24,10 @@ class UsersWidget extends StatelessWidget {
       ),
       title: const Text("User name"),
       subtitle: const Text("Email@email.com"),
-      trailing: Text(
+      trailing: const Text(
         "User role",
         style: TextStyle(
-          color: flirt,
+          color:ColorsManagers. flirt,
           fontWeight: FontWeight.bold,
         ),
       ),

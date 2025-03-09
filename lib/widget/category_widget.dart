@@ -2,7 +2,7 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
-import '../consts/global_colors.dart';
+import '../core/theme/colors.dart';
 
 class CategoryWidget extends StatelessWidget {
   const CategoryWidget({super.key});
@@ -36,7 +36,7 @@ class CategoryWidget extends StatelessWidget {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                backgroundColor: white.withAlpha((0.5 * 255).round()),
+                backgroundColor:ColorsManagers. white.withAlpha((0.5 * 255).round()),
               ),
             ),
           )

@@ -2,7 +2,7 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
-import '../consts/global_colors.dart';
+import '../core/theme/colors.dart';
 import '../screens/product_details_screen.dart';
 
 class FeedsWidget extends StatelessWidget {
@@ -38,15 +38,15 @@ class FeedsWidget extends StatelessWidget {
                   children: [
                     Flexible(
                       child: RichText(
-                        text: TextSpan(
+                        text: const TextSpan(
                             text: '\$',
-                            style: const TextStyle(
+                            style: TextStyle(
                                 color: Color.fromRGBO(33, 150, 243, 1)),
                             children: <TextSpan>[
                               TextSpan(
                                   text: "168.00",
                                   style: TextStyle(
-                                      color: charcoal,
+                                      color:ColorsManagers. charcoal,
                                       fontWeight: FontWeight.w600)),
                             ]),
                       ),

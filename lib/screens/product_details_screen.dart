@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 
-import '../consts/global_colors.dart';
+import '../core/theme/colors.dart';
 
 class ProductDetails extends StatefulWidget {
   const ProductDetails({
@@ -60,16 +60,16 @@ class _ProductDetailsState extends State<ProductDetails> {
                           flex: 1,
                           child: FittedBox(
                             child: RichText(
-                              text: TextSpan(
+                              text: const TextSpan(
                                   text: '\$',
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                       fontSize: 25,
                                       color: Color.fromRGBO(33, 150, 243, 1)),
                                   children: <TextSpan>[
                                     TextSpan(
                                         text: "168.00",
                                         style: TextStyle(
-                                            color: charcoal,
+                                            color:ColorsManagers. charcoal,
                                             fontWeight: FontWeight.bold)),
                                   ]),
                             ),
