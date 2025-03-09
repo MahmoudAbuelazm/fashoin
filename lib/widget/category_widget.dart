@@ -36,7 +36,7 @@ class CategoryWidget extends StatelessWidget {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                backgroundColor: lightCardColor.withAlpha((0.5 * 255).round()),
+                backgroundColor: white.withAlpha((0.5 * 255).round()),
               ),
             ),
           )
