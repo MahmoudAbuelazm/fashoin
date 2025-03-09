@@ -2,6 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:store_app/consts/global_colors.dart';
+import 'package:store_app/screens/categories_screen.dart';
+import 'package:store_app/screens/users_screen.dart';
 
 import '../widget/appbar_icons.dart';
 import '../widget/feeds_widget.dart';
@@ -45,12 +47,24 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           title: const Text("Home"),
           leading: AppBarIcons(
-            function: () {},
+            function: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CategoriesScreen(),
+                  ));
+            },
             icon: IconlyBold.category,
           ),
           actions: [
             AppBarIcons(
-              function: () {},
+              function: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const UsersScreen(),
+                    ));
+              },
               icon: IconlyBold.user3,
             ),
           ],
