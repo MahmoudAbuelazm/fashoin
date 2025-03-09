@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/screens/home_screen.dart';
+import 'package:store_app/features/home/presentation/screen/home_screen.dart';
 import 'routes.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     final arguments = settings.arguments;
     switch (settings.name) {
-      
       case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (_) => const HomeScreen(),
         );
-      
       // case Routes.homeScreen:
       //   return MaterialPageRoute(
       //       builder: (_) => BlocProvider(

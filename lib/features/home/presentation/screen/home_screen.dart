@@ -4,11 +4,11 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:store_app/screens/categories_screen.dart';
 import 'package:store_app/screens/users_screen.dart';
 
-import '../core/theme/colors.dart';
-import '../widget/appbar_icons.dart';
-import '../widget/feeds_widget.dart';
-import '../widget/sale_widget.dart';
-import 'all_products_screen.dart';
+import '../../../../core/theme/colors.dart';
+import '../../../../widget/appbar_icons.dart';
+import '../../../../widget/feeds_widget.dart';
+import '../../../../widget/sale_widget.dart';
+import '../../../../screens/all_products_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
