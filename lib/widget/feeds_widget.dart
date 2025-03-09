@@ -20,6 +20,8 @@ class FeedsWidget extends StatelessWidget {
           onTap: () {},
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 5, right: 5, top: 8),
@@ -45,22 +47,23 @@ class FeedsWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 10),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: FancyShimmerImage(
-                  height: size.height * 0.2,
-                  width: double.infinity,
-                  errorWidget: const Icon(
-                    IconlyBold.danger,
-                    color: Colors.red,
-                    size: 28,
+              Expanded(
+                flex: 3,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: FancyShimmerImage(
+                    height: size.height * 0.2,
+                    width: double.infinity,
+                    errorWidget: const Icon(
+                      IconlyBold.danger,
+                      color: Colors.red,
+                      size: 28,
+                    ),
+                    imageUrl: "https://i.ibb.co/vwB46Yq/shoes.png",
+                    boxFit: BoxFit.contain,
                   ),
-                  imageUrl: "https://i.ibb.co/vwB46Yq/shoes.png",
-                  boxFit: BoxFit.contain,
                 ),
               ),
-              const SizedBox(height: 10),
               const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
@@ -73,9 +76,6 @@ class FeedsWidget extends StatelessWidget {
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-              ),
-              SizedBox(
-                height: size.height * 0.01,
               ),
             ],
           ),

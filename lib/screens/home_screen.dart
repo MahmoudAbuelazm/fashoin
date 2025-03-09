@@ -125,8 +125,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           onTap: () => _controller.animateToPage(i),
                           child: AnimatedContainer(
                             duration: const Duration(milliseconds: 300),
-                            width: 6.0,
-                            height: 6.0,
+                            width: 8.0,
+                            height: 8.0,
                             margin: const EdgeInsets.symmetric(
                                 vertical: 10.0, horizontal: 2.0),
                             decoration: BoxDecoration(
@@ -158,7 +158,28 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              FeedsWidget(),
+              Expanded(
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
+                    children: [
+                      GridView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: 3,
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  crossAxisSpacing: 0,
+                                  mainAxisSpacing: 0,
+                                  childAspectRatio: 0.7),
+                          itemBuilder: (ctx, index) {
+                            return const FeedsWidget();
+                          }),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),
