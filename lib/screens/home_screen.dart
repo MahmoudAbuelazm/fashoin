@@ -3,6 +3,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:store_app/consts/global_colors.dart';
 
 import '../widget/appbar_icons.dart';
+import '../widget/sale_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -81,7 +82,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-              )
+              ),
+              const SaleWidget(),
             ],
           ),
         ),
