@@ -27,7 +27,7 @@ class UsersWidget extends StatelessWidget {
       trailing: Text(
         "User role",
         style: TextStyle(
-          color: lightIconsColor,
+          color: flirt,
           fontWeight: FontWeight.bold,
         ),
       ),

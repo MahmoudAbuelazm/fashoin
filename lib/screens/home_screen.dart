@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     icon: Icon(
                       IconlyLight.search,
-                      color: lightIconsColor,
+                      color: flirt,
                     ),
                   ),
                   hintText: "Search",

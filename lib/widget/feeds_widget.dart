@@ -46,7 +46,7 @@ class FeedsWidget extends StatelessWidget {
                               TextSpan(
                                   text: "168.00",
                                   style: TextStyle(
-                                      color: lightTextColor,
+                                      color: charcoal,
                                       fontWeight: FontWeight.w600)),
                             ]),
                       ),

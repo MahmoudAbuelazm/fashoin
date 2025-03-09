@@ -69,7 +69,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                     TextSpan(
                                         text: "168.00",
                                         style: TextStyle(
-                                            color: lightTextColor,
+                                            color: charcoal,
                                             fontWeight: FontWeight.bold)),
                                   ]),
                             ),

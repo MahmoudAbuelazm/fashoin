@@ -18,16 +18,16 @@ class StoreApp extends StatelessWidget {
         primaryColor: white,
         appBarTheme: AppBarTheme(
           iconTheme: IconThemeData(
-            color: lightIconsColor,
+            color: flirt,
           ),
           backgroundColor: cultured,
           centerTitle: true,
           titleTextStyle: TextStyle(
-              color: lightTextColor, fontSize: 22, fontWeight: FontWeight.bold),
+              color: charcoal, fontSize: 22, fontWeight: FontWeight.bold),
           elevation: 0,
         ),
         iconTheme: IconThemeData(
-          color: lightIconsColor,
+          color: flirt,
         ),
 
         textSelectionTheme: const TextSelectionThemeData(
@@ -47,10 +47,10 @@ class StoreApp extends StatelessWidget {
         colorScheme: ThemeData()
             .colorScheme
             .copyWith(
-              secondary: lightIconsColor,
+              secondary: flirt,
               brightness: Brightness.light,
             )
-            .copyWith(surface: lightBackgroundColor),
+            .copyWith(surface: azureishWhite),
       ),
       home: const HomeScreen(),
     );
