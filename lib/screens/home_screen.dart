@@ -6,6 +6,7 @@ import 'package:store_app/consts/global_colors.dart';
 import '../widget/appbar_icons.dart';
 import '../widget/feeds_widget.dart';
 import '../widget/sale_widget.dart';
+import 'all_products_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -154,7 +155,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     const Spacer(),
-                    AppBarIcons(function: () {}, icon: IconlyBold.arrowRight2),
+                    AppBarIcons(
+                        function: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const AllProductsScreen(),
+                              ));
+                        },
+                        icon: IconlyBold.arrowRight2),
                   ],
                 ),
               ),

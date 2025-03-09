@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
 import '../consts/global_colors.dart';
+import '../screens/product_details_screen.dart';
 
 class FeedsWidget extends StatelessWidget {
   const FeedsWidget({super.key});
@@ -17,7 +18,14 @@ class FeedsWidget extends StatelessWidget {
         color: Theme.of(context).cardColor,
         child: InkWell(
           borderRadius: BorderRadius.circular(8.0),
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ProductDetails(),
+              ),
+            );
+          },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
