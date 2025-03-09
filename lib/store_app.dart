@@ -2,10 +2,12 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
 import 'consts/global_colors.dart';
-import 'screens/home_screen.dart';
+import 'core/routing/app_router.dart';
+import 'core/routing/routes.dart';
 
 class StoreApp extends StatelessWidget {
-  const StoreApp({super.key});
+  final AppRouter appRouter;
+  const StoreApp({super.key, required this.appRouter});
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +54,8 @@ class StoreApp extends StatelessWidget {
             )
             .copyWith(surface: azureishWhite),
       ),
-      home: const HomeScreen(),
+     initialRoute: Routes.homeScreen,
+      onGenerateRoute: appRouter.generateRoute,
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'core/helpers/pre_app_config.dart';
+import 'core/routing/app_router.dart';
 import 'store_app.dart';
 
 void main()async {
@@ -12,7 +13,9 @@ void main()async {
     runApp(
       DevicePreview(
         enabled: true,
-        builder: (context) => const StoreApp(),
+        builder: (context) =>  StoreApp(
+  appRouter: AppRouter(),
+        ),
       ),
     );
   });
