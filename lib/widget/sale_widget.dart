@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
 class SaleWidget extends StatelessWidget {
-  const SaleWidget({super.key});
+  final int i;
+  const SaleWidget({super.key, required this.i});
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Container(
       width: double.infinity,
-      height: size.height * 0.2,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(18),
         gradient: const LinearGradient(
@@ -75,8 +74,7 @@ class SaleWidget extends StatelessWidget {
               padding: const EdgeInsets.all(14.0),
               child: Image.network(
                 width: double.infinity,
-                // height: double.infinity,
-                "https://i.ibb.co/vwB46Yq/shoes.png",
+                saleItems[i],
                 fit: BoxFit.contain,
               ),
             ),
@@ -86,3 +84,9 @@ class SaleWidget extends StatelessWidget {
     );
   }
 }
+
+List saleItems = [
+  "https://i.ibb.co/vwB46Yq/shoes.png",
+  "https://th.bing.com/th/id/R.9a06a9d5fb3daddd463ae7f84b82904f?rik=rmzjFSmnzPFs%2fA&riu=http%3a%2f%2fclipart-library.com%2fimage_gallery2%2fShoes-Transparent.png&ehk=HcjBGNR%2fOAi53Ivk5xUrsK1j17ceBgSxZQbgmr50TCc%3d&risl=1&pid=ImgRaw&r=0",
+  "https://th.bing.com/th/id/R.835982fe6182dbd7980712c4fad623a4?rik=qCrfBSybJHVJOg&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2fshoes-transparent-background%2fshoes-transparent-background-24.png&ehk=yEiMyBARwCE3K7FYfaDNAqcD%2bIOeDgw4Uia%2fNlY17ME%3d&risl=&pid=ImgRaw&r=0"
+];
