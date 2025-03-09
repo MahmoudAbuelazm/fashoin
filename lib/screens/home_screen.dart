@@ -67,7 +67,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   hintText: "Search",
                   filled: true,
                   fillColor: Theme.of(context).cardColor,
-                  prefixIcon: const Icon(IconlyBold.search),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                     borderSide: BorderSide(
@@ -82,6 +81,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
+              ),
+              SizedBox(
+                height: 20,
               ),
               const SaleWidget(),
             ],
