@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/features/home/presentation/screen/home_screen.dart';
+import 'package:store_app/screens/categories_screen.dart';
+import '../../screens/all_products_screen.dart';
+import '../../screens/users_screen.dart';
 import 'routes.dart';
 
 class AppRouter {
@@ -9,6 +12,18 @@ class AppRouter {
       case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (_) => const HomeScreen(),
+        );
+      case Routes.categoriesScreen:
+        return MaterialPageRoute(
+          builder: (_) => const CategoriesScreen(),
+        );
+      case Routes.allProductsScreen:
+        return MaterialPageRoute(
+          builder: (_) => const AllProductsScreen(),
+        );
+      case Routes.usersScreen:
+        return MaterialPageRoute(
+          builder: (_) => const UsersScreen(),
         );
       // case Routes.homeScreen:
       //   return MaterialPageRoute(

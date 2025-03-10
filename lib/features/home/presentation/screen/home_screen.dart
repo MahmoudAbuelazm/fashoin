@@ -1,14 +1,15 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:store_app/screens/categories_screen.dart';
-import 'package:store_app/screens/users_screen.dart';
+import 'package:store_app/core/helpers/extinsions.dart';
 
+import '../../../../core/helpers/spacing.dart';
+import '../../../../core/routing/routes.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../widget/appbar_icons.dart';
 import '../../../../widget/feeds_widget.dart';
 import '../../../../widget/sale_widget.dart';
-import '../../../../screens/all_products_screen.dart';
+import '../section/home_app_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,7 +32,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void dispose() {
     _searchController.dispose();
-
     super.dispose();
   }
 
@@ -44,31 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text("Home"),
-          leading: AppBarIcons(
-            function: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const CategoriesScreen(),
-                  ));
-            },
-            icon: IconlyBold.category,
-          ),
-          actions: [
-            AppBarIcons(
-              function: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const UsersScreen(),
-                    ));
-              },
-              icon: IconlyBold.user3,
-            ),
-          ],
-        ),
+        appBar: const HomeAppBar(),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Column(
@@ -83,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     icon: const Icon(
                       IconlyLight.search,
-                      color:ColorsManagers. flirt,
+                      color: ColorsManagers.flirt,
                     ),
                   ),
                   hintText: "Search",
@@ -99,13 +75,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.circular(10),
                     borderSide: BorderSide(
                       color: Theme.of(context).colorScheme.secondary,
-                      width: 1,
                     ),
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              verticalSpacing(
+                20,
               ),
               SizedBox(
                 height: size.height * 0.25,
@@ -171,11 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     const Spacer(),
                     AppBarIcons(
                         function: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const AllProductsScreen(),
-                              ));
+                          context.pushNamed(Routes.allProductsScreen);
                         },
                         icon: IconlyBold.arrowRight2),
                   ],

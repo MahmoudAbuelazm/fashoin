@@ -16,20 +16,22 @@ class StoreApp extends StatelessWidget {
       builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor:ColorsManagers. cultured,
-        primaryColor:ColorsManagers. white,
+        scaffoldBackgroundColor: ColorsManagers.cultured,
+        primaryColor: ColorsManagers.white,
         appBarTheme: const AppBarTheme(
           iconTheme: IconThemeData(
             color: ColorsManagers.flirt,
           ),
-          backgroundColor:ColorsManagers. cultured,
+          backgroundColor: ColorsManagers.cultured,
           centerTitle: true,
           titleTextStyle: TextStyle(
-              color:ColorsManagers. charcoal, fontSize: 22, fontWeight: FontWeight.bold),
+              color: ColorsManagers.charcoal,
+              fontSize: 22,
+              fontWeight: FontWeight.bold),
           elevation: 0,
         ),
         iconTheme: const IconThemeData(
-          color:ColorsManagers. flirt,
+          color: ColorsManagers.flirt,
         ),
 
         textSelectionTheme: const TextSelectionThemeData(
@@ -44,17 +46,17 @@ class StoreApp extends StatelessWidget {
         //       bodyColor: Colors.black,
         //       displayColor: Colors.black,
         //     ),
-        cardColor:ColorsManagers. white,
+        cardColor: ColorsManagers.white,
         brightness: Brightness.light,
         colorScheme: ThemeData()
             .colorScheme
             .copyWith(
-              secondary:ColorsManagers. flirt,
+              secondary: ColorsManagers.flirt,
               brightness: Brightness.light,
             )
             .copyWith(surface: ColorsManagers.azureishWhite),
       ),
-     initialRoute: Routes.homeScreen,
+      initialRoute: Routes.homeScreen,
       onGenerateRoute: appRouter.generateRoute,
     );
   }
