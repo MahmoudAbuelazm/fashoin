@@ -1,7 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../widget/feeds_widget.dart';
+import '../../../all_products/presentation/widgets/product_item.dart';
 
 class ProductsGrid extends StatelessWidget {
   const ProductsGrid({
@@ -22,7 +22,7 @@ class ProductsGrid extends StatelessWidget {
         itemBuilder: (ctx, index) {
           return FadeInRight(
               delay: Duration(milliseconds: index * 1000),
-              child: const FeedsWidget());
+              child: const ProductItem());
         });
   }
 }

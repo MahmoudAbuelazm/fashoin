@@ -2,11 +2,11 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
-import '../core/theme/colors.dart';
-import '../features/product_details/presentation/screen/product_details_screen.dart';
+import '../../../../core/theme/colors.dart';
+import '../../../product_details/presentation/screen/product_details_screen.dart';
 
-class FeedsWidget extends StatelessWidget {
-  const FeedsWidget({super.key});
+class ProductItem extends StatelessWidget {
+  const ProductItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class FeedsWidget extends StatelessWidget {
                               TextSpan(
                                   text: "168.00",
                                   style: TextStyle(
-                                      color:ColorsManagers. charcoal,
+                                      color: ColorsManagers.charcoal,
                                       fontWeight: FontWeight.w600)),
                             ]),
                       ),
