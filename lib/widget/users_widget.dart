@@ -1,19 +1,19 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:store_app/core/helpers/extinsions.dart';
 
-import '../core/theme/colors.dart';
+import '../core/theme/styles.dart';
 
 class UsersWidget extends StatelessWidget {
   const UsersWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return ListTile(
       leading: FancyShimmerImage(
-        height: size.width * 0.15,
-        width: size.width * 0.15,
+        height: context.screenHeight * 0.15,
+        width: context.screenWidth * 0.15,
         errorWidget: const Icon(
           IconlyBold.danger,
           color: Colors.red,
@@ -24,12 +24,9 @@ class UsersWidget extends StatelessWidget {
       ),
       title: const Text("User name"),
       subtitle: const Text("Email@email.com"),
-      trailing: const Text(
+      trailing:  Text(
         "User role",
-        style: TextStyle(
-          color:ColorsManagers. flirt,
-          fontWeight: FontWeight.bold,
-        ),
+        style: TextStyles.fontFlirtw700(context),
       ),
     );
   }

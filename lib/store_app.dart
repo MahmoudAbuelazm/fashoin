@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'core/routing/app_router.dart';
 import 'core/routing/routes.dart';
 import 'core/theme/colors.dart';
+import 'core/theme/styles.dart';
 
 class StoreApp extends StatelessWidget {
   final AppRouter appRouter;
@@ -18,16 +19,13 @@ class StoreApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: ColorsManagers.cultured,
         primaryColor: ColorsManagers.white,
-        appBarTheme: const AppBarTheme(
-          iconTheme: IconThemeData(
+        appBarTheme:  AppBarTheme(
+          iconTheme: const IconThemeData(
             color: ColorsManagers.flirt,
           ),
           backgroundColor: ColorsManagers.cultured,
           centerTitle: true,
-          titleTextStyle: TextStyle(
-              color: ColorsManagers.charcoal,
-              fontSize: 22,
-              fontWeight: FontWeight.bold),
+          titleTextStyle: TextStyles.font22Charcoalw700(context),
           elevation: 0,
         ),
         iconTheme: const IconThemeData(
