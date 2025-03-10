@@ -1,6 +1,7 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
-import '../widget/category_widget.dart';
+import '../../../../widget/category_widget.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
@@ -8,7 +9,10 @@ class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Categories")),
+      appBar: AppBar(
+        leading: FadeInLeft(child: const Icon(Icons.arrow_back)),
+        title: FadeInDown(child: const Text("Categories")),
+      ),
       body: GridView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
@@ -20,7 +24,9 @@ class CategoriesScreen extends StatelessWidget {
             childAspectRatio: 1.2,
           ),
           itemBuilder: (ctx, index) {
-            return const CategoryWidget();
+            return FadeInRight(
+                delay: Duration(milliseconds: index * 200),
+                child: const CategoryWidget());
           }),
     );
   }

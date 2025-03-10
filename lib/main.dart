@@ -6,15 +6,15 @@ import 'core/helpers/pre_app_config.dart';
 import 'core/routing/app_router.dart';
 import 'store_app.dart';
 
-void main()async {
+void main() async {
   await preAppConfig();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
     runApp(
       DevicePreview(
         enabled: true,
-        builder: (context) =>  StoreApp(
-  appRouter: AppRouter(),
+        builder: (context) => StoreApp(
+          appRouter: AppRouter(),
         ),
       ),
     );

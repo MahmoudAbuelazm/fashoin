@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:store_app/core/helpers/extinsions.dart';
@@ -22,27 +23,30 @@ class _HomeSaleSectionState extends State<HomeSaleSection> {
       child: Stack(
         alignment: AlignmentDirectional.bottomCenter,
         children: [
-          CarouselSlider(
-            carouselController: _controller,
-            items: [0, 1, 2].map((i) {
-              return Builder(builder: (BuildContext context) {
-                return SaleWidget(
-                  i: i,
-                );
-              });
-            }).toList(),
-            options: CarouselOptions(
-              onPageChanged: (index, reason) {
-                setState(() {
-                  _current = index;
+          FadeInRight(
+            child: CarouselSlider(
+              carouselController: _controller,
+              items: [0, 1, 2].map((i) {
+                return Builder(builder: (BuildContext context) {
+                  return SaleWidget(
+                    i: i,
+                  );
                 });
-              },
-              height: context.screenHeight * 0.25,
-              autoPlay: true,
-              enlargeCenterPage: true,
+              }).toList(),
+              options: CarouselOptions(
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    _current = index;
+                  });
+                },
+                height: context.screenHeight * 0.25,
+                autoPlay: true,
+                enlargeCenterPage: true,
+              ),
             ),
           ),
-          HomeSaleDots(controller: _controller, current: _current),
+          FadeInUpBig(
+              child: HomeSaleDots(controller: _controller, current: _current)),
         ],
       ),
     );

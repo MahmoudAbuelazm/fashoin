@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 
-import '../core/theme/colors.dart';
+import '../../../../core/theme/colors.dart';
 
 class ProductDetails extends StatefulWidget {
   const ProductDetails({

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
 import '../core/theme/colors.dart';
-import '../screens/product_details_screen.dart';
+import '../features/product_details/presentation/screen/product_details_screen.dart';
 
 class FeedsWidget extends StatelessWidget {
   const FeedsWidget({super.key});

@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:store_app/core/helpers/extinsions.dart';
@@ -34,19 +35,23 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   children: [
-                    const Text(
-                      "Latest Products",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
+                    FadeInLeft(
+                      child: const Text(
+                        "Latest Products",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                        ),
                       ),
                     ),
                     const Spacer(),
-                    AppBarIcons(
-                        function: () {
-                          context.pushNamed(Routes.allProductsScreen);
-                        },
-                        icon: IconlyBold.arrowRight2),
+                    FadeInRight(
+                      child: AppBarIcons(
+                          function: () {
+                            context.pushNamed(Routes.allProductsScreen);
+                          },
+                          icon: IconlyBold.arrowRight2),
+                    ),
                   ],
                 ),
               ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/features/home/presentation/screen/home_screen.dart';
-import 'package:store_app/screens/categories_screen.dart';
-import '../../screens/all_products_screen.dart';
-import '../../screens/users_screen.dart';
+import 'package:store_app/features/categories/presentation/screen/categories_screen.dart';
+import '../../features/all_products/presentation/screen/all_products_screen.dart';
+import '../../features/users/presentation/screen/users_screen.dart';
 import 'routes.dart';
 
 class AppRouter {
