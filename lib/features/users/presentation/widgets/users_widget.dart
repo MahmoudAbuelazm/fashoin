@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:store_app/core/helpers/extinsions.dart';
 
-import '../core/theme/styles.dart';
+import '../../../../core/theme/styles.dart';
+
 
 class UsersWidget extends StatelessWidget {
   const UsersWidget({super.key});

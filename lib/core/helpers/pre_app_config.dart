@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
 
-import '../di/dependency_injection.dart';
 import 'shared_pref_helper.dart';
 
 // import '../di/dependency_injection.dart';
@@ -13,7 +12,6 @@ import 'shared_pref_helper.dart';
 Future<void> preAppConfig() async {
   WidgetsFlutterBinding.ensureInitialized();
   await CacheServices.instance.init();
-  setupGetIT();
   // await initDeepLinks();
   // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 }

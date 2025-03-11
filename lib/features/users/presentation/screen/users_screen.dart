@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../../widget/users_widget.dart';
+import '../widgets/users_widget.dart';
 
 class UsersScreen extends StatelessWidget {
   const UsersScreen({super.key});
