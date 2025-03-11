@@ -5,26 +5,18 @@ import 'font_weight_helper.dart';
 import 'size_config.dart';
 
 class TextStyles {
-  // static TextStyle font27Blackw600Inter(context) {
-  //   return GoogleFonts.inter(
-  //     fontSize: getResponsiveFontSize(context, fontSize: 27),
-  //     fontWeight: FontWeightHelper.semiBold,
-  //     color: Colors.black,
-  //   );
-  // }
-
+  
   static TextStyle font22Charcoalw700(context) {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontSize: 22),
-      fontWeight: FontWeight.w700,
+      fontWeight: FontWeightHelper.bold,
       color: ColorsManagers.charcoal,
     );
   }
 
   static TextStyle fontFlirtw700(context) {
     return const TextStyle(
-     
-      fontWeight: FontWeight.w700,
+      fontWeight: FontWeight.bold,
       color: ColorsManagers.flirt,
     );
   }
