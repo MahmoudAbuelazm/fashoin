@@ -1,0 +1,1 @@
+String baseApiUrl = 'api.escuelajs.co';
