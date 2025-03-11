@@ -19,7 +19,9 @@ class AppRouter {
         );
       case Routes.allProductsScreen:
         return MaterialPageRoute(
-          builder: (_) => const AllProductsScreen(),
+          builder: (_) => AllProductsScreen(
+            products: [],
+          ),
         );
       case Routes.usersScreen:
         return MaterialPageRoute(

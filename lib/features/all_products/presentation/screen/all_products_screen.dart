@@ -1,10 +1,12 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
+import '../../data/models/all_products_model.dart';
 import '../widgets/product_item.dart';
 
 class AllProductsScreen extends StatelessWidget {
-  const AllProductsScreen({super.key});
+  final List<Product> products;
+  const AllProductsScreen({super.key, required this.products});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class AllProductsScreen extends StatelessWidget {
       body: GridView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          itemCount: 10,
+          itemCount: products.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 0,
@@ -25,7 +27,9 @@ class AllProductsScreen extends StatelessWidget {
           itemBuilder: (ctx, index) {
             return FadeInRight(
                 delay: Duration(milliseconds: index * 200),
-                child: const ProductItem());
+                child:  ProductItem(
+                  product: products[index] ,
+                ));
           }),
     );
   }

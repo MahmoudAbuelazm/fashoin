@@ -1,16 +1,18 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:store_app/core/helpers/extinsions.dart';
+import 'package:store_app/features/all_products/data/models/all_products_model.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../product_details/presentation/screen/product_details_screen.dart';
 
 class ProductItem extends StatelessWidget {
-  const ProductItem({super.key});
+  final Product product;
+  const ProductItem({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.all(2.0),
       child: Material(
@@ -38,14 +40,14 @@ class ProductItem extends StatelessWidget {
                   children: [
                     Flexible(
                       child: RichText(
-                        text: const TextSpan(
+                        text:  TextSpan(
                             text: '\$',
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Color.fromRGBO(33, 150, 243, 1)),
                             children: <TextSpan>[
                               TextSpan(
-                                  text: "168.00",
-                                  style: TextStyle(
+                                  text: product.price.toString(),
+                                  style: const TextStyle(
                                       color: ColorsManagers.charcoal,
                                       fontWeight: FontWeight.w600)),
                             ]),
@@ -60,25 +62,25 @@ class ProductItem extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: FancyShimmerImage(
-                    height: size.height * 0.2,
+                    height: context.screenHeight * 0.2,
                     width: double.infinity,
                     errorWidget: const Icon(
                       IconlyBold.danger,
                       color: Colors.red,
                       size: 28,
                     ),
-                    imageUrl: "https://i.ibb.co/vwB46Yq/shoes.png",
+                    imageUrl: product.images[0],
                     boxFit: BoxFit.contain,
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
+               Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  "Title",
+                  product.title,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 2,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 17,
                     //  fontFamily: 'Roboto',
                     fontWeight: FontWeight.w700,

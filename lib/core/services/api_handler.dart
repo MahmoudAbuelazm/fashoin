@@ -9,10 +9,12 @@ class ApiHandler {
       baseApiUrl,
       '/api/v1/products',
     );
+
     var response = await http.get(uri);
-    var data = jsonDecode(
-      response.body,
-    );
+
+    var data = (json.decode(response.body) as List)
+        .map((e) => Product.fromJson(e))
+        .toList();
 
     return data;
   }

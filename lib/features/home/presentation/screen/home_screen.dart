@@ -57,15 +57,35 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const Expanded(
-                child: SingleChildScrollView(
-                  physics: BouncingScrollPhysics(),
-                  child: Column(
-                    children: [
-                      ProductsGrid(),
-                    ],
-                  ),
-                ),
+              FutureBuilder(
+                future: ApiHandler().getAllProducts(),
+                builder: (ctx, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  } else if (snapshot.hasError) {
+                    return const Center(
+                      child: Text("An error occurred"),
+                    );
+                  } else if (snapshot.hasData) {
+                    return Expanded(
+                      child: SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        child: Column(
+                          children: [
+                            ProductsGrid(
+                              products: snapshot.data!,
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  }
+                  return const Center(
+                    child: Text("An  occurred"),
+                  );
+                },
               )
             ],
           ),
