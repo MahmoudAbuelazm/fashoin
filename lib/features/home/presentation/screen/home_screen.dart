@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:store_app/core/helpers/extinsions.dart';
+import 'package:store_app/core/services/api_handler.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/routing/routes.dart';
@@ -19,6 +20,7 @@ class HomeScreen extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
+        ApiHandler().getAllProducts();
       },
       child: Scaffold(
         appBar: const HomeAppBar(),
