@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:animate_do/animate_do.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
@@ -22,6 +24,17 @@ class ProductDetails extends StatefulWidget {
 class _ProductDetailsState extends State<ProductDetails> {
   int _current = 0;
   final CarouselSliderController _controller = CarouselSliderController();
+  bool isOut = false;
+
+  @override
+  void initState() {
+    Timer(const Duration(milliseconds: 500), () {
+      setState(() {
+        isOut = true;
+      });
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +49,19 @@ class _ProductDetailsState extends State<ProductDetails> {
               verticalSpacing(
                 18,
               ),
-              FadeInRight(child: const BackButton()),
+              FadeInRight(
+                child: const BackButton(),
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      product.category.name,
-                      style: TextStyles.font20w500(context),
+                    FadeInDown(
+                      child: Text(
+                        product.category.name,
+                        style: TextStyles.font25w500(context),
+                      ),
                     ),
                     verticalSpacing(
                       18,
@@ -54,28 +71,32 @@ class _ProductDetailsState extends State<ProductDetails> {
                       children: [
                         Flexible(
                           flex: 3,
-                          child: Text(
-                            product.title,
-                            textAlign: TextAlign.start,
-                            style: TextStyles.font24wBold(context),
+                          child: FadeInLeft(
+                            child: Text(
+                              product.title,
+                              textAlign: TextAlign.start,
+                              style: TextStyles.font24wBold(context),
+                            ),
                           ),
                         ),
                         Flexible(
                           flex: 1,
-                          child: FittedBox(
-                            child: RichText(
-                              text: TextSpan(
-                                  text: '\$',
-                                  style: const TextStyle(
-                                      fontSize: 25,
-                                      color: Color.fromRGBO(33, 150, 243, 1)),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                        text: product.price.toString(),
-                                        style: const TextStyle(
-                                            color: ColorsManagers.charcoal,
-                                            fontWeight: FontWeight.bold)),
-                                  ]),
+                          child: FadeInRight(
+                            child: FittedBox(
+                              child: RichText(
+                                text: TextSpan(
+                                    text: '\$',
+                                    style: const TextStyle(
+                                        fontSize: 25,
+                                        color: Color.fromRGBO(33, 150, 243, 1)),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                          text: product.price.toString(),
+                                          style: const TextStyle(
+                                              color: ColorsManagers.charcoal,
+                                              fontWeight: FontWeight.bold)),
+                                    ]),
+                              ),
                             ),
                           ),
                         ),
@@ -153,14 +174,18 @@ class _ProductDetailsState extends State<ProductDetails> {
                   children: [
                     Text('Description', style: TextStyles.font24wBold(context)),
                     verticalSpacing(
-                      18,
+                      8,
                     ),
-                    Text(
-                      product.description,
-                      textAlign: TextAlign.start,
-                      style: TextStyle(
-                          fontSize:
-                              getResponsiveFontSize(context, fontSize: 25)),
+                    AnimatedOpacity(
+                      opacity: isOut ? 1 : 0,
+                      duration: const Duration(milliseconds: 500),
+                      child: Text(
+                        product.description,
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                            fontSize:
+                                getResponsiveFontSize(context, fontSize: 25)),
+                      ),
                     ),
                   ],
                 ),

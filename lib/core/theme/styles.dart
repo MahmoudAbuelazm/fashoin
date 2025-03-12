@@ -33,10 +33,10 @@ class TextStyles {
       fontSize: getResponsiveFontSize(context, fontSize: 17),
     );
   }
-  static TextStyle font20w500(context) {
+  static TextStyle font25w500(context) {
     return TextStyle(
       fontWeight: FontWeight.w500,
-      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontSize: getResponsiveFontSize(context, fontSize: 25),
     );
   }
   static TextStyle font24wBoldWithBackground(context) {
