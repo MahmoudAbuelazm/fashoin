@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
 import 'package:store_app/core/helpers/extinsions.dart';
-import 'package:store_app/features/all_products/data/models/all_products_model.dart';
-
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
 import '../../../product_details/data/models/product.dart';
