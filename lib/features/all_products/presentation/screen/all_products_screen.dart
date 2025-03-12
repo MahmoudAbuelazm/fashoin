@@ -1,6 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../../product_details/data/models/product.dart';
 import '../../data/models/all_products_model.dart';
 import '../widgets/product_item.dart';
 
@@ -27,8 +29,11 @@ class AllProductsScreen extends StatelessWidget {
           itemBuilder: (ctx, index) {
             return FadeInRight(
                 delay: Duration(milliseconds: index * 200),
-                child:  ProductItem(
-                  // product: products[index] ,
+                child:  ChangeNotifierProvider.value(
+                  value: products[index],
+                  child: ProductItem(
+                    // product: products[index] ,
+                  ),
                 ));
           }),
     );

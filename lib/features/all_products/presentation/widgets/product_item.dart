@@ -7,6 +7,7 @@ import 'package:store_app/features/all_products/data/models/all_products_model.d
 
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/styles.dart';
+import '../../../product_details/data/models/product.dart';
 import '../../../product_details/presentation/screen/product_details_screen.dart';
 
 class ProductItem extends StatelessWidget {
