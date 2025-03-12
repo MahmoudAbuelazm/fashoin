@@ -28,7 +28,7 @@ class AllProductsScreen extends StatelessWidget {
             return FadeInRight(
                 delay: Duration(milliseconds: index * 200),
                 child:  ProductItem(
-                  product: products[index] ,
+                  // product: products[index] ,
                 ));
           }),
     );

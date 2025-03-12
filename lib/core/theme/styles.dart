@@ -5,7 +5,6 @@ import 'font_weight_helper.dart';
 import 'size_config.dart';
 
 class TextStyles {
-  
   static TextStyle font22Charcoalw700(context) {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontSize: 22),
@@ -13,11 +12,31 @@ class TextStyles {
       color: ColorsManagers.charcoal,
     );
   }
+  
 
   static TextStyle fontFlirtw700(context) {
     return const TextStyle(
       fontWeight: FontWeight.bold,
       color: ColorsManagers.flirt,
+    );
+  }
+
+  static TextStyle font16w600(context) {
+    return TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+    );
+  }
+  static TextStyle font17w700(context) {
+    return TextStyle(
+      fontWeight: FontWeight.w700,
+      fontSize: getResponsiveFontSize(context, fontSize: 17),
+    );
+  }
+  static TextStyle font20w500(context) {
+    return TextStyle(
+      fontWeight: FontWeight.w500,
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
     );
   }
 }

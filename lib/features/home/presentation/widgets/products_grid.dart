@@ -25,9 +25,9 @@ class ProductsGrid extends StatelessWidget {
         itemBuilder: (ctx, index) {
           return FadeInRight(
               delay: Duration(milliseconds: index * 100),
-              child:  ProductItem(
-                product: products[index],
-              ));
+              child: ProductItem(
+                  // product: products[index],
+                  ));
         });
   }
 }

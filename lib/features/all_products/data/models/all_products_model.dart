@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class AllProductsModel {
   List<Product> products;
 
@@ -10,7 +12,7 @@ class AllProductsModel {
   }
 }
 
-class Product {
+class Product with ChangeNotifier {
   final int id, price;
   final String title, slug, description;
   final List<String> images;

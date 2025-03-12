@@ -1,18 +1,20 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:provider/provider.dart';
 import 'package:store_app/core/helpers/extinsions.dart';
 import 'package:store_app/features/all_products/data/models/all_products_model.dart';
 
 import '../../../../core/theme/colors.dart';
+import '../../../../core/theme/styles.dart';
 import '../../../product_details/presentation/screen/product_details_screen.dart';
 
 class ProductItem extends StatelessWidget {
-  final Product product;
-  const ProductItem({super.key, required this.product});
+  const ProductItem({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final Product product= Provider.of<Product>(context);
     return Padding(
       padding: const EdgeInsets.all(2.0),
       child: Material(
@@ -80,11 +82,7 @@ class ProductItem extends StatelessWidget {
                   product.title,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 2,
-                  style: const TextStyle(
-                    fontSize: 17,
-                    //  fontFamily: 'Roboto',
-                    fontWeight: FontWeight.w700,
-                  ),
+                  style:  TextStyles.font17w700(context),
                 ),
               ),
             ],

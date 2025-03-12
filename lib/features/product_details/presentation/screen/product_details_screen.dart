@@ -3,6 +3,7 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/theme/colors.dart';
+import '../../../../core/theme/styles.dart';
 
 class ProductDetails extends StatefulWidget {
   const ProductDetails({
@@ -37,10 +38,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                     Text(
                       "Category",
                       style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                          TextStyles.font20w500(context),
                     ),
                     const SizedBox(
                       height: 18,
@@ -111,7 +112,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                         },
                       ),
 
-                      // control: const SwiperControl(),
+                      
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.min,

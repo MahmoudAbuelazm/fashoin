@@ -6,6 +6,7 @@ import 'package:store_app/core/services/api_handler.dart';
 
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/routing/routes.dart';
+import '../../../../core/theme/styles.dart';
 import '../../../../widget/appbar_icons.dart';
 import '../section/home_app_bar.dart';
 import '../section/home_sale_section.dart';
@@ -38,12 +39,9 @@ class HomeScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     FadeInLeft(
-                      child: const Text(
+                      child:  Text(
                         "Latest Products",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18,
-                        ),
+                        style: TextStyles.font16w600(context),
                       ),
                     ),
                     const Spacer(),
