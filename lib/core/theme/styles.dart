@@ -46,6 +46,12 @@ class TextStyles {
       backgroundColor: ColorsManagers.white.withAlpha((0.5 * 255).round()),
     );
   }
+  static TextStyle font24wBold(context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 24),
+      fontWeight: FontWeight.bold,
+    );
+  }
 }
 
 double getResponsiveFontSize(BuildContext context, {required double fontSize}) {

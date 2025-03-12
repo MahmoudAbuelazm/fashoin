@@ -56,7 +56,6 @@ class SaleWidget extends StatelessWidget {
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                              
                               ),
                             ),
                           ),

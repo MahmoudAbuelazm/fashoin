@@ -13,7 +13,7 @@ class ProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Product product= Provider.of<Product>(context);
+    final Product product = Provider.of<Product>(context);
     return Padding(
       padding: const EdgeInsets.all(2.0),
       child: Material(
@@ -25,7 +25,8 @@ class ProductItem extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const ProductDetails(),
+                builder: (context) => ChangeNotifierProvider.value(
+                    value: product, child: const ProductDetails()),
               ),
             );
           },
@@ -41,7 +42,7 @@ class ProductItem extends StatelessWidget {
                   children: [
                     Flexible(
                       child: RichText(
-                        text:  TextSpan(
+                        text: TextSpan(
                             text: '\$',
                             style: const TextStyle(
                                 color: Color.fromRGBO(33, 150, 243, 1)),
@@ -75,13 +76,13 @@ class ProductItem extends StatelessWidget {
                   ),
                 ),
               ),
-               Padding(
+              Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   product.title,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 2,
-                  style:  TextStyles.font17w700(context),
+                  style: TextStyles.font17w700(context),
                 ),
               ),
             ],
