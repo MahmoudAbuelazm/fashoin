@@ -15,7 +15,7 @@ class CategoriesScreen extends StatelessWidget {
             child: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-           context.pop();
+            context.pop();
           },
         )),
         title: FadeInDown(child: const Text("Categories")),
@@ -32,17 +32,15 @@ class CategoriesScreen extends StatelessWidget {
               child: Text("An error occurred"),
             );
           } else if (snapshot.hasData) {
-            return Expanded(
-              child: SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Column(
-                    children: [
-                      CategoriesGrid(
-                        categories: snapshot.data!,
-                      ),
-                    ],
-                  )),
-            );
+            return SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Column(
+                  children: [
+                    CategoriesGrid(
+                      categories: snapshot.data!,
+                    ),
+                  ],
+                ));
           }
           return const Center(
             child: Text("An  occurred"),

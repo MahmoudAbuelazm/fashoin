@@ -34,7 +34,7 @@ class ProductItem extends StatelessWidget {
                 bottomLeft: Radius.circular(50),
                 bottomRight: Radius.circular(50),
               ),
-              color: ColorsManagers.darkSkyBlue.withOpacity(.83),
+              color: ColorsManagers.darkSkyBlue.withAlpha((0.83 * 255).round()),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,

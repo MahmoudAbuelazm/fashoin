@@ -12,7 +12,7 @@ void main() async {
       .then((_) {
     runApp(
       DevicePreview(
-        enabled: true,
+        enabled: false,
         builder: (context) => StoreApp(
           appRouter: AppRouter(),
         ),

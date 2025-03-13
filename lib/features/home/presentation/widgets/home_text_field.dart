@@ -17,10 +17,11 @@ class _HomeTextFieldState extends State<HomeTextField> {
   bool isOut = false;
 
   late TextEditingController _searchController;
+  Timer? _timer;
   @override
   void initState() {
     _searchController = TextEditingController();
-    Timer(const Duration(milliseconds: 300), () {
+    _timer = Timer(const Duration(milliseconds: 300), () {
       setState(() {
         isOut = true;
       });
@@ -30,6 +31,7 @@ class _HomeTextFieldState extends State<HomeTextField> {
 
   @override
   void dispose() {
+    _timer?.cancel();
     _searchController.dispose();
     super.dispose();
   }
