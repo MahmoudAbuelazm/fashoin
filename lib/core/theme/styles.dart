@@ -14,6 +14,30 @@ class TextStyles {
     );
   }
 
+  static TextStyle font24Blackw600Inter(context) {
+    return GoogleFonts.inter(
+      fontWeight: FontWeight.w600,
+      fontSize: getResponsiveFontSize(context, fontSize: 24),
+      color: Colors.black,
+    );
+  }
+
+  static TextStyle font24DarkSkyBluew600Inter(context) {
+    return GoogleFonts.inter(
+      fontWeight: FontWeight.w600,
+      fontSize: getResponsiveFontSize(context, fontSize: 24),
+      color: ColorsManagers.darkSkyBlue,
+    );
+  }
+
+  static TextStyle font15SpanishGrayw600Inter(context) {
+    return GoogleFonts.inter(
+      fontWeight: FontWeight.w600,
+      fontSize: getResponsiveFontSize(context, fontSize: 15),
+      color: ColorsManagers.spanishGray,
+    );
+  }
+
   static TextStyle fontFlirtw700(context) {
     return const TextStyle(
       fontWeight: FontWeight.bold,
@@ -41,13 +65,15 @@ class TextStyles {
       fontSize: getResponsiveFontSize(context, fontSize: 13),
     );
   }
-  static TextStyle font12w700Inter (context) {
+
+  static TextStyle font12w700Inter(context) {
     return GoogleFonts.inter(
       fontWeight: FontWeight.w700,
       fontSize: getResponsiveFontSize(context, fontSize: 12),
     );
   }
-  static TextStyle font12w400Inter (context) {
+
+  static TextStyle font12w400Inter(context) {
     return GoogleFonts.inter(
       fontWeight: FontWeight.w400,
       fontSize: getResponsiveFontSize(context, fontSize: 12),
@@ -55,7 +81,7 @@ class TextStyles {
   }
 
   static TextStyle font25w500(context) {
-    return TextStyle(
+    return GoogleFonts.inter(
       fontWeight: FontWeight.w500,
       fontSize: getResponsiveFontSize(context, fontSize: 25),
     );
@@ -70,7 +96,7 @@ class TextStyles {
   }
 
   static TextStyle font24wBold(context) {
-    return TextStyle(
+    return GoogleFonts.inter(
       fontSize: getResponsiveFontSize(context, fontSize: 24),
       fontWeight: FontWeight.bold,
     );

@@ -30,10 +30,12 @@ environment:
 dependencies:
   animate_do: ^4.2.0
   animations: ^2.0.11
+  cached_network_image: ^3.4.1
   carousel_slider: ^5.0.0
   cupertino_icons: ^1.0.8
   device_preview: ^1.2.0
   fancy_shimmer_image: ^2.0.3
+  fl_chart: ^0.70.2
   flutter:
     sdk: flutter
   flutter_iconly: ^1.0.2
@@ -46,12 +48,20 @@ dependencies:
   page_transition: ^2.2.1
   provider: ^6.1.2
   shared_preferences: ^2.5.2
+  skeletonizer: ^1.4.3
 
 dev_dependencies:
   flutter_launcher_icons: ^0.14.1
   flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
+flutter_launcher_icons:
+  android: true
+  ios: true
+  remobe_alpha_ios: true
+  image_path: "assets/images/icon.png"
+  adaptive_icon_background: "#78C3D1"
+  adaptive_icon_foreground: "assets/images/icon.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

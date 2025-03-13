@@ -54,7 +54,7 @@ class StoreApp extends StatelessWidget {
             )
             .copyWith(surface: ColorsManagers.azureishWhite),
       ),
-      initialRoute: Routes.homeScreen,
+      initialRoute: Routes.onBoardingScreen,
       onGenerateRoute: appRouter.generateRoute,
     );
   }

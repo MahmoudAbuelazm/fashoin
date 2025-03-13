@@ -33,8 +33,8 @@ extension MediaQueryValues on BuildContext {
 }
 
 extension SizeExtension on num {
-  static const double referenceHeight = 917;
-  static const double referenceWidth = 412;
+  static const double referenceHeight = 812;
+  static const double referenceWidth = 375;
 
   double h(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);

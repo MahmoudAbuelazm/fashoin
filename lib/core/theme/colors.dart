@@ -8,4 +8,5 @@ class ColorsManagers {
   static const Color charcoal = Color(0xff324558);
   static const Color brightGray = Color(0xffE0E0E0);
   static const Color darkSkyBlue = Color(0xff78C3D1);
+  static const Color spanishGray = Color(0xff979797);
 }

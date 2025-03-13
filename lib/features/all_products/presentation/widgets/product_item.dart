@@ -1,6 +1,4 @@
-import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
 import 'package:store_app/core/helpers/extinsions.dart';
 import '../../../../core/theme/colors.dart';
@@ -19,19 +17,13 @@ class ProductItem extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(50),
-            child: FancyShimmerImage(
-              height: context.screenHeight * 0.3,
-              width: double.infinity,
-              errorWidget: const Icon(
-                IconlyBold.danger,
-                color: Colors.red,
-                size: 28,
-              ),
-              imageUrl: product.images[0],
-              boxFit: BoxFit.cover,
-            ),
-          ),
+              borderRadius: BorderRadius.circular(50),
+              child: Image.network(
+                product.images[0],
+                fit: BoxFit.cover,
+                height: context.screenHeight * 0.3,
+                width: double.infinity,
+              )),
           Container(
             width: double.infinity,
             padding: const EdgeInsets.symmetric(vertical: 5),

@@ -40,73 +40,21 @@ class _ProductDetailsState extends State<ProductDetails> {
   Widget build(BuildContext context) {
     final Product product = Provider.of<Product>(context);
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        leading: FadeInLeft(
+          child: IconButton(
+              onPressed: () {
+                context.pop();
+              },
+              icon: const Icon(Icons.arrow_back)),
+        ),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              verticalSpacing(
-                18,
-              ),
-              
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    FadeInDown(
-                      child: Text(
-                        product.category.name,
-                        style: TextStyles.font25w500(context),
-                      ),
-                    ),
-                    verticalSpacing(
-                      18,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Flexible(
-                          flex: 3,
-                          child: FadeInLeft(
-                            child: Text(
-                              product.title,
-                              textAlign: TextAlign.start,
-                              style: TextStyles.font24wBold(context),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 1,
-                          child: FadeInRight(
-                            child: FittedBox(
-                              child: RichText(
-                                text: TextSpan(
-                                    text: '\$',
-                                    style: const TextStyle(
-                                        fontSize: 25,
-                                        color: Color.fromRGBO(33, 150, 243, 1)),
-                                    children: <TextSpan>[
-                                      TextSpan(
-                                          text: product.price.toString(),
-                                          style: const TextStyle(
-                                              color: ColorsManagers.charcoal,
-                                              fontWeight: FontWeight.bold)),
-                                    ]),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    verticalSpacing(
-                      18,
-                    ),
-                  ],
-                ),
-              ),
               SizedBox(
                 height: context.screenHeight * 0.4,
                 child: Stack(
@@ -140,25 +88,83 @@ class _ProductDetailsState extends State<ProductDetails> {
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: product.images.map((i) {
-                        return GestureDetector(
-                          onTap: () => _controller.animateToPage(
-                            product.images.indexOf(i),
-                          ),
-                          child: AnimatedContainer(
-                            duration: const Duration(milliseconds: 300),
-                            width: 8.0,
-                            height: 8.0,
-                            margin: const EdgeInsets.symmetric(
-                                vertical: 10.0, horizontal: 2.0),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: _current == product.images.indexOf(i)
-                                  ? Colors.red
-                                  : Colors.white,
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 8),
+                          child: GestureDetector(
+                            onTap: () => _controller.animateToPage(
+                              product.images.indexOf(i),
+                            ),
+                            child: AnimatedContainer(
+                              duration: const Duration(milliseconds: 300),
+                              width: 8.0,
+                              height: 8.0,
+                              margin: const EdgeInsets.symmetric(
+                                  vertical: 10.0, horizontal: 2.0),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: _current == product.images.indexOf(i)
+                                    ? ColorsManagers.darkSkyBlue
+                                    : Colors.white,
+                              ),
                             ),
                           ),
                         );
                       }).toList(),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    FadeInDown(
+                      child: Center(
+                        child: Text(
+                          product.title,
+                          textAlign: TextAlign.center,
+                          style: TextStyles.font24wBold(context),
+                        ),
+                      ),
+                    ),
+                    verticalSpacing(
+                      18,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Flexible(
+                          flex: 3,
+                          child: FadeInLeft(
+                            child: Text(
+                              product.category.name,
+                              style: TextStyles.font25w500(context),
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          flex: 1,
+                          child: FadeInRight(
+                            child: FittedBox(
+                              child: RichText(
+                                text: TextSpan(
+                                    text: '\$',
+                                    style: const TextStyle(
+                                        fontSize: 25,
+                                        color: Color.fromRGBO(33, 150, 243, 1)),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                          text: product.price.toString(),
+                                          style: const TextStyle(
+                                              color: ColorsManagers.charcoal,
+                                              fontWeight: FontWeight.bold)),
+                                    ]),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -171,7 +177,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Description', style: TextStyles.font24wBold(context)),
+                    Text('Product Description',
+                        style: TextStyles.font24wBold(context)),
                     verticalSpacing(
                       8,
                     ),
