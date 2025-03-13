@@ -19,9 +19,9 @@ class StoreApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: ColorsManagers.cultured,
         primaryColor: ColorsManagers.white,
-        appBarTheme:  AppBarTheme(
+        appBarTheme: AppBarTheme(
           iconTheme: const IconThemeData(
-            color: ColorsManagers.flirt,
+            color: ColorsManagers.darkSkyBlue,
           ),
           backgroundColor: ColorsManagers.cultured,
           centerTitle: true,
@@ -29,7 +29,7 @@ class StoreApp extends StatelessWidget {
           elevation: 0,
         ),
         iconTheme: const IconThemeData(
-          color: ColorsManagers.flirt,
+          color: ColorsManagers.darkSkyBlue,
         ),
 
         textSelectionTheme: const TextSelectionThemeData(
@@ -49,7 +49,7 @@ class StoreApp extends StatelessWidget {
         colorScheme: ThemeData()
             .colorScheme
             .copyWith(
-              secondary: ColorsManagers.flirt,
+              secondary: ColorsManagers.darkSkyBlue,
               brightness: Brightness.light,
             )
             .copyWith(surface: ColorsManagers.azureishWhite),

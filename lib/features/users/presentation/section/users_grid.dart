@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:store_app/features/users/data/model/user.dart';
 import 'package:store_app/features/users/presentation/widgets/users_widget.dart';
 
-
 class UsersGrid extends StatelessWidget {
   final List<User> users;
   const UsersGrid({
@@ -14,19 +13,15 @@ class UsersGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Column(
-              children: users
-                  .map((e) => ChangeNotifierProvider.value(
-                      value: e,
-                      child: FadeInRight(
-                          delay: Duration(
-                              milliseconds:
-                                 users .indexOf(e) * 200),
-                          child: const UsersWidget())))
-                  .toList())),
-    );
+    return SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Column(
+            children: users
+                .map((e) => ChangeNotifierProvider.value(
+                    value: e,
+                    child: FadeInRight(
+                        delay: Duration(milliseconds: users.indexOf(e) * 200),
+                        child: const UsersWidget())))
+                .toList()));
   }
 }

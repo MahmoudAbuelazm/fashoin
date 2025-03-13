@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
 
 import '../../../../core/theme/colors.dart';
 
@@ -44,28 +43,19 @@ class _HomeTextFieldState extends State<HomeTextField> {
         controller: _searchController,
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
-          suffixIcon: IconButton(
-            onPressed: () {
-              _searchController.clear();
-            },
-            icon: const Icon(
-              IconlyLight.search,
-              color: ColorsManagers.flirt,
-            ),
-          ),
-          hintText: "Search",
+          hintText: "Search for what you need",
           filled: true,
-          fillColor: Theme.of(context).cardColor,
+          fillColor: ColorsManagers.brightGray,
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(30),
             borderSide: BorderSide(
               color: Theme.of(context).cardColor,
             ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(
-              color: Theme.of(context).colorScheme.secondary,
+            borderRadius: BorderRadius.circular(30),
+            borderSide: const BorderSide(
+              color: ColorsManagers.darkSkyBlue,
             ),
           ),
         ),

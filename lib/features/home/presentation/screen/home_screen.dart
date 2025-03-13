@@ -34,27 +34,6 @@ class HomeScreen extends StatelessWidget {
                 20,
               ),
               const HomeSaleSection(),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    FadeInLeft(
-                      child:  Text(
-                        "Latest Products",
-                        style: TextStyles.font16w600(context),
-                      ),
-                    ),
-                    const Spacer(),
-                    FadeInRight(
-                      child: AppBarIcons(
-                          function: () {
-                            context.pushNamed(Routes.allProductsScreen);
-                          },
-                          icon: IconlyBold.arrowRight2),
-                    ),
-                  ],
-                ),
-              ),
               FutureBuilder(
                 future: ApiHandler().getAllProducts(),
                 builder: (ctx, snapshot) {
@@ -72,6 +51,29 @@ class HomeScreen extends StatelessWidget {
                         physics: const BouncingScrollPhysics(),
                         child: Column(
                           children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  FadeInLeft(
+                                    child: Text(
+                                      "Latest Products",
+                                      style: TextStyles.font16w600(context),
+                                    ),
+                                  ),
+                                  const Spacer(),
+                                  FadeInRight(
+                                    child: AppBarIcons(
+                                        function: () {
+                                          context.pushNamed(
+                                              Routes.allProductsScreen,
+                                              arguments: snapshot.data!);
+                                        },
+                                        icon: IconlyBold.arrowRight2),
+                                  ),
+                                ],
+                              ),
+                            ),
                             ProductsGrid(
                               products: snapshot.data!,
                             ),

@@ -3,6 +3,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:store_app/core/helpers/extinsions.dart';
+import 'package:store_app/core/theme/colors.dart';
 
 import '../../../../core/routing/routes.dart';
 import '../../../../widget/appbar_icons.dart';
@@ -17,6 +18,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: ColorsManagers.cultured,
       title: BounceInDown(child: const Text("Home")),
       leading: FadeInLeft(
         child: AppBarIcons(
@@ -33,6 +35,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               context.pushNamed(Routes.usersScreen);
             },
             icon: IconlyBold.user3,
+            
           ),
         ),
       ],

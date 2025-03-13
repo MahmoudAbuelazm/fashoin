@@ -15,6 +15,9 @@ class UsersWidget extends StatelessWidget {
     final User user = Provider.of<User>(context);
     return ListTile(
       leading: FancyShimmerImage(
+        boxDecoration: const BoxDecoration(
+          shape: BoxShape.circle,
+        ),
         height: context.screenHeight * 0.15,
         width: context.screenWidth * 0.15,
         errorWidget: const Icon(

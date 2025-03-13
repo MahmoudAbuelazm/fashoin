@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/core/theme/colors.dart';
 
 class AppBarIcons extends StatelessWidget {
   const AppBarIcons({super.key, required this.function, required this.icon});
@@ -19,7 +20,10 @@ class AppBarIcons extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.all(6.0),
-              child: Icon(icon),
+              child: Icon(
+                icon,
+                color: ColorsManagers.darkSkyBlue,
+              ),
             ),
           )),
     );

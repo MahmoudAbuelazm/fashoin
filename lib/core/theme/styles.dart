@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'colors.dart';
 import 'font_weight_helper.dart';
@@ -12,7 +13,6 @@ class TextStyles {
       color: ColorsManagers.charcoal,
     );
   }
-  
 
   static TextStyle fontFlirtw700(context) {
     return const TextStyle(
@@ -27,18 +27,40 @@ class TextStyles {
       fontSize: getResponsiveFontSize(context, fontSize: 16),
     );
   }
+
   static TextStyle font17w700(context) {
     return TextStyle(
       fontWeight: FontWeight.w700,
       fontSize: getResponsiveFontSize(context, fontSize: 17),
     );
   }
+
+  static TextStyle font13w700Inter(context) {
+    return GoogleFonts.inter(
+      fontWeight: FontWeight.w700,
+      fontSize: getResponsiveFontSize(context, fontSize: 13),
+    );
+  }
+  static TextStyle font12w700Inter (context) {
+    return GoogleFonts.inter(
+      fontWeight: FontWeight.w700,
+      fontSize: getResponsiveFontSize(context, fontSize: 12),
+    );
+  }
+  static TextStyle font12w400Inter (context) {
+    return GoogleFonts.inter(
+      fontWeight: FontWeight.w400,
+      fontSize: getResponsiveFontSize(context, fontSize: 12),
+    );
+  }
+
   static TextStyle font25w500(context) {
     return TextStyle(
       fontWeight: FontWeight.w500,
       fontSize: getResponsiveFontSize(context, fontSize: 25),
     );
   }
+
   static TextStyle font24wBoldWithBackground(context) {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontSize: 24),
@@ -46,6 +68,7 @@ class TextStyles {
       backgroundColor: ColorsManagers.white.withAlpha((0.5 * 255).round()),
     );
   }
+
   static TextStyle font24wBold(context) {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontSize: 24),

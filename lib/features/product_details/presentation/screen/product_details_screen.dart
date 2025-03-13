@@ -40,6 +40,7 @@ class _ProductDetailsState extends State<ProductDetails> {
   Widget build(BuildContext context) {
     final Product product = Provider.of<Product>(context);
     return Scaffold(
+      appBar: AppBar(),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -49,9 +50,7 @@ class _ProductDetailsState extends State<ProductDetails> {
               verticalSpacing(
                 18,
               ),
-              FadeInRight(
-                child: const BackButton(),
-              ),
+              
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
@@ -176,8 +175,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                     verticalSpacing(
                       8,
                     ),
-                    AnimatedOpacity(
-                      opacity: isOut ? 1 : 0,
+                    AnimatedScale(
+                      scale: isOut ? 1 : 0,
                       duration: const Duration(milliseconds: 500),
                       child: Text(
                         product.description,

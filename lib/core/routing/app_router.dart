@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:store_app/features/home/presentation/screen/home_screen.dart';
 import 'package:store_app/features/categories/presentation/screen/categories_screen.dart';
 import '../../features/all_products/presentation/screen/all_products_screen.dart';
+import '../../features/product_details/data/models/product.dart';
 import '../../features/users/presentation/screen/users_screen.dart';
 import 'routes.dart';
 
@@ -19,8 +20,8 @@ class AppRouter {
         );
       case Routes.allProductsScreen:
         return MaterialPageRoute(
-          builder: (_) => AllProductsScreen(
-            products: [],
+          builder: (_) =>  AllProductsScreen(
+            products: arguments!  as List<Product>,
           ),
         );
       case Routes.usersScreen:
