@@ -41,6 +41,8 @@ From the **Home to Categories screens**, everything is seamlessly integrated wit
 
 ### 🎨 Demo  
 
-![Demo](https://github.com/user-attachments/assets/1265eeab-7d4d-4d63-a6f3-645a605697a6)
+https://github.com/user-attachments/assets/58413de8-868b-4c3a-8a51-23cd77f9e274
+
+
 
 
